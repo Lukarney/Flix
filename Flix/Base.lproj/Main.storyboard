@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <activityIndicatorView key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="hlr-hy-7vu">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="hlr-hy-7vu">
+                            <rect key="frame" x="0.0" y="249.00000034679067" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="color" systemColor="labelColor"/>
                         </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="200" id="xxW-km-mK7" customClass="MovieCell">
-                                <rect key="frame" x="0.0" y="68.5" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xxW-km-mK7" id="28f-Z4-UMS">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -132,7 +132,7 @@
                 <navigationController title="Now Playing" automaticallyAdjustsScrollViewInsets="NO" id="WRR-Te-8UB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="SZm-gH-A5q"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oC4-c0-Pke">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="Movies" id="oC4-c0-Pke">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
