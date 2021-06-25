@@ -9,6 +9,7 @@
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h"
+#import "Reachability.h"
 
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 //automatically create getter and setter getMovies and setMovies
@@ -24,6 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //loading
+    // Start the activity indicator
+    [self.activityIndicator startAnimating];
+    
+    [self setReachabilityNotif];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -34,13 +41,8 @@
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
-    //loading
-    // Start the activity indicator
-    [self.activityIndicator startAnimating];
+    
 
-    // Stop the activity indicator
-    // Hides automatically if "Hides When Stopped" is enabled
-    [self.activityIndicator stopAnimating];
     
     
 }
@@ -69,6 +71,10 @@
                // TODO: Reload your table view data
            }
         [self.refreshControl endRefreshing];
+        // Stop the activity indicator
+        // Hides automatically if "Hides When Stopped" is enabled
+        [self.activityIndicator stopAnimating];
+        
        }];
     [task resume];
 }
@@ -98,6 +104,65 @@
     
     return cell;
 }
+
+- (void)showAlert{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Bad Connection"
+        message:@"Cannot get movies. The internet connections is offline"
+        preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    // create a cancel action
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                style:UIAlertActionStyleCancel
+            handler:^(UIAlertAction * _Nonnull action) {
+    // handle cancel response here. Doing nothing will dismiss the view.
+                                                      }];
+    // add the cancel action to the alertController
+    [alert addAction:cancelAction];
+
+    // create an OK action
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                // handle response here.
+                                                     }];
+    // add the OK action to the alert controller
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:^{
+        // optional code for what happens after the alert controller has finished presenting
+    }];
+}
+
+- (void) setReachabilityNotif{
+    // Allocate a reachability object
+    Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+
+    // Set the blocks
+    reach.reachableBlock = ^(Reachability*reach)
+    {
+        // keep in mind this is called on a background thread
+        // and if you are updating the UI it needs to happen
+        // on the main thread, like this:
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"REACHABLE!");
+        });
+    };
+
+    reach.unreachableBlock = ^(Reachability*reach)
+    {
+        
+        NSLog(@"UNREACHABLE!");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showAlert];
+
+        });
+    };
+
+    // Start the notifier, which will cause the reachability object to retain itself!
+    [reach startNotifier];
+    }
+
 
 #pragma mark - Navigation
 
