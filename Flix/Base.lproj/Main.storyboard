@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WRR-Te-8UB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4MA-w1-zYx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="87.723214285714278"/>
+            <point key="canvasLocation" x="-2184" y="1681"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="rWP-Bg-012">
@@ -123,12 +123,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhE-0g-4ha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1813.0434782608697" y="87.723214285714278"/>
+            <point key="canvasLocation" x="-2184" y="2516"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Now Playing-->
         <scene sceneID="rUb-CZ-Nyc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WRR-Te-8UB" sceneMemberID="viewController">
+                <navigationController title="Now Playing" automaticallyAdjustsScrollViewInsets="NO" id="WRR-Te-8UB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="SZm-gH-A5q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oC4-c0-Pke">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -141,7 +142,58 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0m6-xm-w59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="87.723214285714278"/>
+            <point key="canvasLocation" x="-2183" y="849"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LHX-J2-k5p">
+            <objects>
+                <tabBarController id="4MA-w1-zYx" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bJ3-82-U8C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WRR-Te-8UB" kind="relationship" relationship="viewControllers" id="ED5-7d-4Zl"/>
+                        <segue destination="aic-6m-9s9" kind="relationship" relationship="viewControllers" id="wtp-Y0-MNO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AqC-sJ-cvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-916" y="88"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="S5C-Bk-xks">
+            <objects>
+                <navigationController id="aic-6m-9s9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="J8P-tw-zF8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rz6-64-XtQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="He0-VA-g6m" kind="relationship" relationship="rootViewController" id="79T-6o-InZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5L-UG-Vb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="848"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Fza-a0-Lhg">
+            <objects>
+                <viewController id="He0-VA-g6m" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RI7-hj-oVT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="n0y-uK-Hdk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3aD-s5-aby"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdy-Fh-tAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="1681"/>
         </scene>
     </scenes>
     <resources>
