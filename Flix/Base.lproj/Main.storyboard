@@ -130,7 +130,7 @@
         <scene sceneID="rUb-CZ-Nyc">
             <objects>
                 <navigationController title="Now Playing" automaticallyAdjustsScrollViewInsets="NO" id="WRR-Te-8UB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" id="SZm-gH-A5q"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="now_playing_tabbar_item" id="SZm-gH-A5q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="Movies" id="oC4-c0-Pke">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -168,7 +168,7 @@
         <scene sceneID="S5C-Bk-xks">
             <objects>
                 <navigationController title="Posters" id="aic-6m-9s9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Posters" id="J8P-tw-zF8"/>
+                    <tabBarItem key="tabBarItem" title="Posters" image="projector_tabbar_item" id="J8P-tw-zF8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rz6-64-XtQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -240,6 +240,8 @@
         <segue reference="upR-tE-O34"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="now_playing_tabbar_item" width="21" height="21"/>
+        <image name="projector_tabbar_item" width="21" height="25"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
